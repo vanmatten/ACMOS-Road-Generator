@@ -430,7 +430,7 @@ if __name__ == '__main__':
     lbl_roads_label = tk.Label(frame_roads, text=text['lbl_roads_label'][language.get()])
     lbl_roads_label.pack(anchor=tk.NW, padx=5, pady=10, side=tk.LEFT)
     road_dirs = listdir(f'roads')
-    
+
     #Get CLI argument for road selection
     type_arg = next((s for s in sys.argv if s.startswith("-t:")), None)
 
@@ -445,23 +445,23 @@ if __name__ == '__main__':
     road_selection.set(config['DEFAULT']['roads'])
     optm_roads = ttk.OptionMenu(frame_roads, road_selection, selected_roads, *road_dirs)
     optm_roads.pack(anchor=tk.NW, padx=5, pady=9)
-    
+
     #LOD Path widgets
     lbl_lod_path_label = tk.Label(frame_lod, text=text['lbl_lod_path_label'][language.get()])
     lbl_lod_path_label.pack(anchor=tk.NW, padx=5, pady=15, side=tk.LEFT)
     btn_lod_path = tk.Button(frame_lod, text=lod_path_arg, command=set_lod_path)
     btn_lod_path.pack(anchor=tk.NW, padx=5, pady=10)
-    
+
     #Output Path widgets
     lbl_output_path_label = tk.Label(frame_output, text=text['lbl_output_path_label'][language.get()])
     lbl_output_path_label.pack(anchor=tk.NW, padx=5, pady=15, side=tk.LEFT)
     btn_output_path = tk.Button(frame_output, text=out_path_arg, command=set_output_path)
     btn_output_path.pack(anchor=tk.NW, padx=5, pady=10)
-    
+
     #Generate button
     btn_generate = tk.Button(frame_generate, text=text['btn_generate'][language.get()], command=generate_button)
     btn_generate.pack(anchor=tk.CENTER, padx=10, pady=10)
-    
+
     #Statusbar
     statusbar = tk.Label(frame_generate, text='', bd=1, relief=tk.SUNKEN, anchor=tk.W, wraplength=500)
     statusbar.pack(side=tk.BOTTOM, padx=3, fill=tk.X)
@@ -475,7 +475,7 @@ if __name__ == '__main__':
     frame_lod.pack()
     frame_output.pack()
     frame_generate.pack(expand=True, fill=tk.X)
-    
+
     #Get autorun CLI argument
     if '-autorun' in sys.argv:
         generate_button()

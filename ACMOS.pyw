@@ -245,7 +245,7 @@ def generate(worldspaces, road_path, output_path, lod_path, texconv):
             except OSError as ex:
                 sm(f'Error: OSError removing {file}: {ex}')
     sm(text['Zip contents prompt title'][language.get()])
-    
+
     if '-zip' in sys.argv:
         #If -zip argument is provided, zip output
         answer = True

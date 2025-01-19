@@ -296,7 +296,7 @@ def set_output_path():
 
 def generate_button():
     #Update configuration file before starting the process
-    config['DEFAULT']['roads'] = road_selection.get()  #! Check road_selection
+    config['DEFAULT']['roads'] = road_selection.get()
     config.write(open('config.ini', 'w'))
     #What the generate button does
     btn_generate['state'] = 'disabled'
@@ -442,7 +442,7 @@ if __name__ == '__main__':
         selected_roads = config['DEFAULT']['roads']
 
     road_selection = tk.StringVar(window)
-    road_selection.set(config['DEFAULT']['roads'])
+    road_selection.set(selected_roads)
     optm_roads = ttk.OptionMenu(frame_roads, road_selection, selected_roads, *road_dirs)
     optm_roads.pack(anchor=tk.NW, padx=5, pady=9)
 
